@@ -69,7 +69,7 @@ class MotionDetector:
             if not self.recording:
             
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                filename = f"motion_{timestamp}.mp4"
+                filename = f"outputs/detected_motions/motion_{timestamp}.mp4"
                 fourcc = cv2.VideoWriter_fourcc(*'mp4v')
                 self.video_writer = cv2.VideoWriter(
                     filename,

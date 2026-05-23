@@ -1,4 +1,5 @@
 import cv2
+from datetime import datetime
 
 
 
@@ -22,7 +23,9 @@ class FaceDetector:
             minSize = (50,50)
         )
         if len(faces) > 0:
-            cv2.imwrite(f"screenshot.jpg", frame)
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"outputs/detected_faces/face_{timestamp}.jpg"
+            cv2.imwrite(filename, frame)
         return faces
     
 
